@@ -6,45 +6,61 @@
     <link rel="stylesheet" href="style.css">
     <title>homepage</title>
 </head>
+
 <body>
+
     <header>
             <h1>The Catfish Bar</h1>
     </header>
+
     <nav>
-        <ul>
-            <li>
-                <a href="">menu</a>
-            </li>
-            <li>
-                <a href="search.html">search</a>
-            </li>
-        </ul>
+        <button id="menu-icon">
+            ☰
+        </button>
+       <a href="search.html" class="search-icon">
+            ⌕
+        </a>
     </nav>
-    <figure>
-        <img src="" alt="">
-    </figure>
+
+    <ul id="dropdown-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="cart.html">Shopping Cart</a></li>
+    </ul>
+
+    
+    <section class="hero">
+        <img src="assets/The-catfish-bar-neon-sign.png" alt="Catfish Bar Neon Sign">
+    </section>
+
     <main>
-        <section id="drink">
-            <h2>Drink</h2>
-            <p>Find More</p>
-            <figure>
-                <img src="" alt="">
-            </figure>
+
+        <section class="card">
+            <img src="assets/whiskey-drink.jpg" alt="Whiskey drink">
+            <div class="text">
+                <h2>DRINK</h2>
+                <a href="search.html">FIND MORE</a>
+            </div>
         </section>
-            <section id="food">
-            <h2>Food</h2>
-            <p>Find More</p>
-            <figure>
-                <img src="" alt="">
-            </figure>
+
+        <section class="card-flip">
+            <img src="assets/burger-and-fries.jpg" alt="Burger and fries">
+            <div class="text">
+                <h2>FOOD</h2>
+                <a href="search.html">FIND MORE</a>
+            </div>
         </section>
-            <section id="event">
-            <h2>Event</h2>
-            <p>Find More</p>
-            <figure>
-                <img src="" alt="">
-            </figure>
+
+        <section class="card">
+            <img src="assets/jazz-performance.jpg" alt="Jazz performance">
+            <div class="text">
+                <h2>EVENT</h2>
+                <a href="search.html">FIND MORE</a>
+            </div>
         </section>
+
     </main>
+    <script src="script.js"></script>
+
 </body>
 </html>
