@@ -1,0 +1,26 @@
+@import url(
+    'https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap'
+);
+
+body {
+    font-family: 'Playfair Display SC', serif;
+    color: var(#1a1a1a);
+    line-height:1.6;
+}
+
+header h1 {
+    color:#fff;
+    font-size: clamp(2rem, 5vw, 4rem);
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow: 
+    0 0 5px rgba(255,255,255,0.5),
+    0 0 15px rgba(212,138,71,0.5);
+}
+
+
+h1,
+h2,
+h3 {
+    letter-spacing: 2px;
+}

@@ -1,0 +1,34 @@
+.text a {
+    text-decoration: none;
+    color: #fdf5e6;
+    border: 2px solid #fdf5e6;
+    padding: 0.9rem 2rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.text a:hover {
+    background-color: #fdf5e6;
+    color: #8b0000;
+    transform: translateY(-2px);
+}
+
+.text a::after {
+    content: '✦';
+    position: absolute;
+    top: -12px;
+    right:-12px;
+    opacity:0;
+    transform:rotate(-20deg) scale(0.5);
+    transition:0.3s;
+    font-size:1.2rem;
+    color:#f5a623;
+}
+
+.text a:hover::after {
+    opacity:1;
+    transform:rotate(10deg) scale(1);
+}
+
+

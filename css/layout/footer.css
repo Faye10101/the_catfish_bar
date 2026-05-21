@@ -1,0 +1,12 @@
+footer{
+    background-color:#003844;
+    color:#fdf5e6;
+    text-align:center;
+    padding:3rem 2rem;
+    border-top:4px solid #f5a623;
+}
+
+footer p{
+    margin:0.5rem 0;
+    opacity:0.9;
+}

@@ -1,0 +1,28 @@
+#dropdown-menu {
+    display: none;
+    list-style: none;
+    background-color: #8b0000;
+    padding: 1rem 2rem;
+    max-height:0;
+    overflow:hidden;
+    transition:0.4s ease;
+    background-color:#8b0000;
+}
+
+#dropdown-menu a {
+    text-decoration: none;
+    color: #fdf5e6;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+#dropdown-menu a:hover {
+    color: #1a1a1a;
+}
+
+#dropdown-menu.show {
+    display: block;
+    max-height:300px;
+    padding:1rem 2rem;
+}
