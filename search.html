@@ -3,49 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/dropdown.css">
+    <link rel="stylesheet" href="css/layout/footer.css">
+    <link rel="stylesheet" href="css/layout/header.css">
+    <link rel="stylesheet" href="css/layout/main.css">
+    <link rel="stylesheet" href="css/layout/responsive.css">
+    <link rel="stylesheet" href="css/pages/search.css">
+    <link rel="stylesheet" href="css/system/color.css">
+    <link rel="stylesheet" href="css/system/reset.css">
+    <link rel="stylesheet" href="css/system/typography.css">
     <title>Search</title>
 </head>
+
 <body>
     <header>
             <h1>The Catfish Bar</h1>
     </header>
-    <div>
-        <input type="text" placeholder="Search.." name="search">
+    
+    <div class="search-bar">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="search-input" placeholder="Search..">
+        <button id="filter-icon">⛭</button>
     </div>
-    <nav>
-        <ul>
-            <li>
-                <a href="">Drink</a>
-            </li>
-            <li>
-                <a href="">Food</a>
-            </li>
-            <li>
-                <a href="">Event</a>
-            </li>
-        </ul>
+
+    <div id="filter-menu" class="hide">
+        <button class="tag-button" data-tag="craft">Craft</button>
+        <button class="tag-button" data-tag="sour">Sour & Fruit</button>
+        <button class="tag-button" data-tag="dark">Dark & Spirits</button>
+    </div>
+
+    <nav class="nav-bar">
+        <button class="tag-button" data-tag="drink">Drink</button>
+        <button class="tag-button" data-tag="food">Food</button>
+        <button class="tag-button" data-tag="event">Event</button>
     </nav>
+        
     <main>
-        <div>
+        <div class="shop-group">
             <h3>Best Seller</h3>
-            <figure>
-                <img src="" alt="">
-            </figure>
+            <div class="slide" id="group-best-seller">
+            </div>
         </div>
-        <div>
+
+        <div class="shop-group">
             <h3>Latest Arrived</h3>
-            <figure>
-                <img src="" alt="">
-            </figure>
+            <div class="slide" id="group-latest-arrived">
+            </div>
         </div>
-        <div>
+
+        <div class="shop-group">
             <h3>Seasonal</h3>
-            <figure>
-                <img src="" alt="">
-            </figure>
+            <div class="slide" id="group-seasonal">
+            </div>
         </div>
+
     </main>
+
     <footer>
         <p>
             <strong>Get in Touch</strong>
@@ -57,5 +72,8 @@
             30 Gertrude Street Fitzory
         </p>
     </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

@@ -26,3 +26,30 @@
     max-height:300px;
     padding:1rem 2rem;
 }
+
+#filter-menu {
+    text-align: center;
+    margin-bottom: 0.6rem;
+}
+
+#filter-menu.hide {
+    display: none;
+}
+
+#filter-menu .tag-button {
+    background-color: var(--vintage-green);
+    color: var(--vintage-yellow);
+    border: 0.06rem solid var(--vintage-yellow);
+    padding: 0.3rem 0.75rem;
+    margin: 0.25rem;
+    border-radius: 0.25rem;
+    cursor: pointer; 
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+#filter-menu .tag-button.active {
+    background-color: var(--vintage-red);
+    color: #ffffff;
+    border-color: var(--vintage-red);
+}

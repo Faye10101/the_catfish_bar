@@ -20,3 +20,55 @@
 .card-flip:hover img {
     transform: scale(1.03);
 }
+
+.slide {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    scroll-behavior: smooth;
+}
+
+.slide::-webkit-scrollbar {
+    height: 0.3rem;
+}
+
+.slide::-webkit-scrollbar-thumb {
+    background: var(--vintage-yellow);
+    border-radius: 0.6rem;
+}
+
+.item-card {
+    background: var(--vintage-red);
+    border: 1px solid var(--vintage-orange);
+    padding: 0.75rem;
+    width: 10rem;
+    flex-shrink: 0;
+    text-align: center;
+    border-radius: 0.3rem;
+    animation: fadeIn 0.4s ease-in-out;
+    transition: transform 0.2 ease, box-shadow 0.2s ease;
+}
+
+.item-card:hover {
+    transform: scale(1.05);
+    background: var(--vintage-orange);
+}
+
+.item-card p {
+    margin-top: 0.5rem;
+    color: var(--vintage-yellow);
+    font-size: 1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(0.6rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
