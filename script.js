@@ -1,8 +1,10 @@
 const menuIcon = document.getElementById('menu-icon');
 const dropdownMenu = document.getElementById('dropdown-menu');
-menuIcon.addEventListener('click', function(){
-    dropdownMenu.classList.toggle('show');
-});
+if (menuIcon && dropdownMenu) {
+    menuIcon.addEventListener('click', function() {
+        dropdownMenu.classList.toggle('show');
+    });
+}
 
 const searchInput = document.getElementById('search-input');
 const filterBtn = document.getElementById('filter-icon');
@@ -33,7 +35,7 @@ const webData = {
             { name: 'Pilsner', img: 'assets/pilsner.jpg', tag: 'craft' },   
             ]
     }
-}
+};
 
 function showProducts(catagory) {
     const bestContainer = document.getElementById('group-best-seller');
@@ -52,7 +54,7 @@ function showProducts(catagory) {
                     <img src='${item.img}' alt='${item.name}'>
                     <p>${item.name}</p>
                 </div>
-                `;
+            `;
         });
         return htmlContent;
     }
@@ -83,7 +85,7 @@ if (searchInput) {
 
             showProducts(selectedCatagory);
 
-            tagBtn.forEach(t => t.className.remove('active'));
+            tagBtn.forEach(t => t.classList.remove('active'));
 
         });
     });
@@ -107,8 +109,8 @@ if (searchInput) {
                     card.style.display = 'none';
                 }
             });        
+        });
     });
-});
 
     searchInput.addEventListener('input', function() {
         const text = searchInput.ariaValueMax.toLocaleLowerCase().trim();
