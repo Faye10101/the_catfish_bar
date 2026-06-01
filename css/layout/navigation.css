@@ -46,7 +46,7 @@ nav a:hover {
     color: #fff;
 }
 
-.search-bar {
+.nav-bar {
     text-align: center;
     margin: 2rem auto;
     display: flex;
@@ -54,7 +54,7 @@ nav a:hover {
     gap: 1.5rem;
 }
 
-.search-bar .tag-button {
+.nav-bar .tag-button {
     background: transparent;
     color: var(--vintage-yellow);
     border: 2px solid var(--vintage-orange);
@@ -67,15 +67,15 @@ nav a:hover {
     transition: all 0.3s ease;
 }
 
-.search-bar .tag-button:hover,
-.search-bar .tag-button.active {
+.nav-bar .tag-button:hover,
+.nav-bar .tag-button.active {
     background-color: #f5a623;
     color: #8b0000;
     transform: translateY(-2px);
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
 }
 
-.search-bar .tag-button::after {
+.nav-bar .tag-button::after {
     content: '✦';
     position: absolute;
     top: -12px;
@@ -87,8 +87,8 @@ nav a:hover {
     color:#f5a623;
 }
 
-.search-bar .tag-button:hover::after,
-.search-bar .tag-button.active::after {
+.nav-bar .tag-button:hover::after,
+.nav-bar .tag-button.active::after {
     opacity: 1;
     transform: rotate(10deg) scale(1);
 }

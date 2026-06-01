@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Playfair Display SC', serif;
-    color: var(#1a1a1a);
+    color: var(--vintage-black);
     line-height:1.6;
 }
 

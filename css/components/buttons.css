@@ -30,3 +30,23 @@
     opacity:1;
     transform:rotate(10deg) scale(1);
 }
+
+.price-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.price-pill {
+    background-color: var(--vintage-yellow);
+    color: var(--vintage-red);
+    border-radius: 1rem;
+    padding: 0.35rem 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.03rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
