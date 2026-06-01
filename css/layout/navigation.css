@@ -46,7 +46,7 @@ nav a:hover {
     color: #fff;
 }
 
-.nav-bar {
+.search-bar {
     text-align: center;
     margin: 2rem auto;
     display: flex;
@@ -54,3 +54,41 @@ nav a:hover {
     gap: 1.5rem;
 }
 
+.search-bar .tag-button {
+    background: transparent;
+    color: var(--vintage-yellow);
+    border: 2px solid var(--vintage-orange);
+    padding: 0.6rem 1.5rem;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.search-bar .tag-button:hover,
+.search-bar .tag-button.active {
+    background-color: #f5a623;
+    color: #8b0000;
+    transform: translateY(-2px);
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+
+.search-bar .tag-button::after {
+    content: '✦';
+    position: absolute;
+    top: -12px;
+    right:-12px;
+    opacity:0;
+    transform:rotate(-20deg) scale(0.5);
+    transition:0.3s;
+    font-size:1.2rem;
+    color:#f5a623;
+}
+
+.search-bar .tag-button:hover::after,
+.search-bar .tag-button.active::after {
+    opacity: 1;
+    transform: rotate(10deg) scale(1);
+}
