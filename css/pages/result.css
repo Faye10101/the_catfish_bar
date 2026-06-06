@@ -84,4 +84,7 @@
     margin: 3rem auto;
 }
 
-
+.product-link {
+    text-decoration: none;
+    display: block;
+}

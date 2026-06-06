@@ -1,0 +1,218 @@
+.page-header {
+    position:relative;
+}
+
+.back-link {
+    position:absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--vintage-yellow);
+    text-decoration: none;
+    font-size: 2.2rem;
+    line-height: 1;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--vintage-orange);
+    transform: translateY(-50%) translateX(-0.25rem);
+}
+
+.product-hero img {
+    width: 100%;
+    max-height: 11rem;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.product-banner {
+    text-align: center;
+    margin: 2.5rem auto 0.5rem auto;
+}
+
+.ribbon-title {
+    display: inline-block;
+    position: relative;
+    background-color: var(--vintage-orange);
+    color: var(--vintage-red);
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    letter-spacing: 0.12rem;
+    padding: 0.6rem 2.2rem;
+    border: 0.15rem solid var(--vintage-red);
+    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.25);
+}
+
+.ribbon-title::before,
+.ribbon-title::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 1.2rem;
+    height: 100%;
+    background-color: var(--vintage-orange);
+    border: 0.15rem solid var(--vintage-red);
+}
+
+.ribbon-title::before {
+    left: -1.3rem;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+
+.ribbon-title::after {
+    left: -1.3rem;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.product-purchase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+#purchase-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.size-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.size-label {
+    background-color: var(--vintage-orange);
+    color: var(--vintage-red);
+    border-radius: 1rem;
+    padding: 0.35rem 0.9rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.quantity-stepper {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.quantity-button {
+    background-color: var(--vintage-green);
+    color: var(--vintage-yellow);
+    border: 0.06rem solid var(--vintage-yellow);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.quantity-button:hover {
+    background-color: var(--vintage-red);
+}
+
+.quantity-number {
+    min-width: 1.5rem;
+    text-align: center;
+    color: var(--vintage-yellow);
+    font-weight: bold;
+}
+
+.go-to-cart-button:hover {
+    transform: translateY(-0.15rem);
+    background-color: var(--vintage-yellow);
+}
+
+.product-description {
+    max-width: 40rem;
+    margin: 2.5rem auto 1.5rem auto;
+    background-color: var(--vintage-orange);
+    color: var(--vintage-red);
+    text-align: center;
+    padding: 0.8rem 1rem;
+    border-radius: 0.3rem;
+    font-weight: bold;
+    letter-spacing: 0.06rem;
+}
+
+.accordion-toggle {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    max-width: 40rem;
+    margin: 0.6rem auto 0 auto;
+    background-color: var(--vintage-orange);
+    color: var(--vintage-red);
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.06rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 0.3rem;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+.accordion-toggle.open .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    display: none;
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 0 1.2rem;
+    color: var(--vintage-yellow);
+    line-height: 1.6;
+}
+
+.accordion-content.open {
+    display: block;
+    padding: 1rem 1.2rem;
+}
+
+.related-product {
+    width: 8rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+.related-product img {
+    width: 100%;
+    height: 7rem;
+    object-fit: contain;
+    background-color: var(--vintage-white);
+    border-radius: 0.3rem;
+    padding: 0.4rem;
+}
+
+.related-product span {
+    display: block;
+    margin-top: 0.4rem;
+    color: var(--vintage-orange);
+}
+
+@media screen and (max-width: 480px) {
+    .product-purchase {
+        flex-direction: column;
+    }
+    .size-row {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+}

@@ -132,25 +132,205 @@ if (searchInput) {
         if (event.key === 'Enter') {
             const typedText = searchInput.value.trim();
             if (typedText.length > 0) {
-                window.location.href = 'result.html?query' + encodeURIComponent(typedText);
+                window.location.href = 'result.html?query=' + encodeURIComponent(typedText);
             }
         }
     });
 }
 
 const productCatalog = [
-    { productName:'Forn Fishin',  breweryName:'Molly Rose Brewing', style:'IPA - American', alcoholByVolume:'6.2%', category:'Beer', flavourTag:'carft', image:'assets/molly-rose-beer.jpg', smallSizePrice: 8.5, largeSizePrice: 16.5},
-    { productName: "Apple Cider",             breweryName: "Napoleone Cider",                 style: "Cider – Traditional",  alcoholByVolume: "4.7%", category: "Cider", flavourTag: "sour",  image: "assets/apple-cider.jpg",       smallSizePrice: 7.5, largeSizePrice: 12.5 },
-    { productName: "Melbourne Black",         breweryName: "Nation Brewing Co",               style: "Stout – Irish Dry",    alcoholByVolume: "4.3%", category: "Beer",  flavourTag: "dark",  image: "assets/melbourne-black.jpg",   smallSizePrice: 7.5, largeSizePrice: 14   },
-    { productName: "Pale Ale",                breweryName: "Spangled Drongo Brewing Company", style: "Pale Ale – Australian", alcoholByVolume: "4.5%", category: "Beer",  flavourTag: "craft", image: "assets/pale-ale.png",          smallSizePrice: 7,   largeSizePrice: 13.5 },
-    { productName: "Berry Caramel Tart Sour", breweryName: "Gweilo Beer",                     style: "Sour – Fruited",       alcoholByVolume: "4.9%", category: "Beer",  flavourTag: "sour",  image: "assets/tart-sour.jpg",         smallSizePrice: 10,  largeSizePrice: 19.5 },
-    { productName: "Sole Tarder Hazy",        breweryName: "Sole Trader Brewing",             style: "Hazy Pale Ale",        alcoholByVolume: "5.0%", category: "Beer",  flavourTag: "craft", image: "assets/sole-tarder-hazy.jpg",  smallSizePrice: 8,   largeSizePrice: 15   },
-    { productName: "Spicy Pickle Beer",       breweryName: "Pickle Lane Brewing",             style: "Gose – Spiced",        alcoholByVolume: "4.2%", category: "Beer",  flavourTag: "sour",  image: "assets/spicy-pickle-beer.jpg", smallSizePrice: 7.5, largeSizePrice: 14   },
-    { productName: "Jaegar – Fresh Hop 2026", breweryName: "Jaegar Brewing",                  style: "Fresh Hop IPA",        alcoholByVolume: "6.5%", category: "Beer",  flavourTag: "dark",  image: "assets/jaegar.png",            smallSizePrice: 9,   largeSizePrice: 17   },
-    { productName: "Whippy",                  breweryName: "Whippy Brewing",                  style: "Pastry Sour",          alcoholByVolume: "5.5%", category: "Beer",  flavourTag: "craft", image: "assets/whippy.jpg",            smallSizePrice: 9.5, largeSizePrice: 18   },
-    { productName: "Hazelnut Brown",          breweryName: "Brown Street Brewing",            style: "Brown Ale – Nut",      alcoholByVolume: "5.2%", category: "Beer",  flavourTag: "dark",  image: "assets/hazelnut-brown.jpg",    smallSizePrice: 8,   largeSizePrice: 15   },
-    { productName: "Highwayman",              breweryName: "Highwayman Brewing",              style: "Amber Ale",            alcoholByVolume: "5.8%", category: "Beer",  flavourTag: "craft", image: "assets/highwayman.jpg",        smallSizePrice: 8.5, largeSizePrice: 16   },
-    { productName: "Pilsner",                 breweryName: "Catfish Brewing",                 style: "Pilsner – Czech",      alcoholByVolume: "4.6%", category: "Beer",  flavourTag: "craft", image: "assets/pilsner.png",           smallSizePrice: 7,   largeSizePrice: 13   }
+    {
+        productId: "gorn-fishin",
+        productName: "Gorn Fishin'",
+        breweryName: "Molly Rose Brewing",
+        style: "IPA - American",
+        alcoholByVolume: "6.2%",
+        category: "Beer",
+        flavourTag: "craft",
+        image: "assets/molly-rose-beer.jpg",
+        smallSizePrice: 8.5,
+        largeSizePrice: 16.5,
+        description: "Classic Taste. Come And Try",
+        moreInformation: "A shining melon and stonefruit core elevates this American IPA, with a lean malt profile that lets the hops shine and a moderately bitter, crisp finish.",
+        rating: 3.9,
+        ratingCount: 4475
+    },
+    {
+        productId: "apple-cider",
+        productName: "Apple Cider",
+        breweryName: "Napoleone Cider",
+        style: "Cider - Traditional",
+        alcoholByVolume: "4.7%",
+        category: "Cider",
+        flavourTag: "sour",
+        image: "assets/apple-cider.jpg",
+        smallSizePrice: 7.5,
+        largeSizePrice: 12.5,
+        description: "Crisp, Refreshing, Orchard Fresh",
+        moreInformation: "Pressed from hand-picked apples for a clean, lightly tart cider with a gentle sweetness and a dry, refreshing finish.",
+        rating: 4.2,
+        ratingCount: 2310
+    },
+    {
+        productId: "melbourne-black",
+        productName: "Melbourne Black",
+        breweryName: "Nation Brewing Co",
+        style: "Stout - Irish Dry",
+        alcoholByVolume: "4.3%",
+        category: "Beer",
+        flavourTag: "dark",
+        image: "assets/melbourne-black.jpg",
+        smallSizePrice: 7.5,
+        largeSizePrice: 14,
+        description: "Smooth, Roasty, Sessionable",
+        moreInformation: "A silky Irish dry stout with notes of coffee and dark chocolate, balanced by a soft, dry finish that keeps you coming back.",
+        rating: 4.0,
+        ratingCount: 1890
+    },
+    {
+        productId: "pale-ale",
+        productName: "Pale Ale",
+        breweryName: "Spangled Drongo Brewing Company",
+        style: "Pale Ale - Australian",
+        alcoholByVolume: "4.5%",
+        category: "Beer",
+        flavourTag: "craft",
+        image: "assets/pale-ale.png",
+        smallSizePrice: 7,
+        largeSizePrice: 13.5,
+        description: "Easy Going, All Day Ale",
+        moreInformation: "A balanced Australian pale ale with citrus and pine hop character over a clean malt base. Bright and very easy to drink.",
+        rating: 3.8,
+        ratingCount: 1520
+    },
+    {
+        productId: "berry-caramel-tart-sour",
+        productName: "Berry Caramel Tart Sour",
+        breweryName: "Gweilo Beer",
+        style: "Sour - Fruited",
+        alcoholByVolume: "4.9%",
+        category: "Beer",
+        flavourTag: "sour",
+        image: "assets/tart-sour.jpg",
+        smallSizePrice: 10,
+        largeSizePrice: 19.5,
+        description: "Tart, Sweet, Playful",
+        moreInformation: "A fruited sour bursting with berry and a swirl of caramel sweetness, finishing with a bright, mouth-watering tartness.",
+        rating: 4.4,
+        ratingCount: 980
+    },
+    {
+        productId: "sole-tarder-hazy",
+        productName: "Sole Tarder Hazy",
+        breweryName: "Sole Trader Brewing",
+        style: "Hazy Pale Ale",
+        alcoholByVolume: "5.0%",
+        category: "Beer",
+        flavourTag: "craft",
+        image: "assets/sole-tarder-hazy.jpg",
+        smallSizePrice: 8,
+        largeSizePrice: 15,
+        description: "Juicy, Soft, Hazy",
+        moreInformation: "A soft and juicy hazy pale ale layered with tropical fruit aromatics and a pillowy mouthfeel. Low bitterness, big flavour.",
+        rating: 4.1,
+        ratingCount: 1340
+    },
+    {
+        productId: "spicy-pickle-beer",
+        productName: "Spicy Pickle Beer",
+        breweryName: "Pickle Lane Brewing",
+        style: "Gose - Spiced",
+        alcoholByVolume: "4.2%",
+        category: "Beer",
+        flavourTag: "sour",
+        image: "assets/spicy-pickle-beer.jpg",
+        smallSizePrice: 7.5,
+        largeSizePrice: 14,
+        description: "Salty, Sour, A Little Wild",
+        moreInformation: "A savoury gose with briny pickle character, a pinch of salt and a gentle chilli warmth. Strange on paper, addictive in the glass.",
+        rating: 3.6,
+        ratingCount: 760
+    },
+    {
+        productId: "jaegar-fresh-hop-2026",
+        productName: "Jaegar - Fresh Hop 2026",
+        breweryName: "Jaegar Brewing",
+        style: "Fresh Hop IPA",
+        alcoholByVolume: "6.5%",
+        category: "Beer",
+        flavourTag: "dark",
+        image: "assets/jaegar.png",
+        smallSizePrice: 9,
+        largeSizePrice: 17,
+        description: "Bold, Fresh, Limited Run",
+        moreInformation: "Brewed with freshly picked hops for a vivid, resinous aroma and a full-bodied bitterness. A seasonal release worth chasing.",
+        rating: 4.3,
+        ratingCount: 1120
+    },
+    {
+        productId: "whippy",
+        productName: "Whippy",
+        breweryName: "Whippy Brewing",
+        style: "Pastry Sour",
+        alcoholByVolume: "5.5%",
+        category: "Beer",
+        flavourTag: "craft",
+        image: "assets/whippy.jpg",
+        smallSizePrice: 9.5,
+        largeSizePrice: 18,
+        description: "Dessert In A Glass",
+        moreInformation: "A creamy pastry sour reminiscent of soft-serve, with vanilla sweetness balanced by a clean, lactic tang.",
+        rating: 4.0,
+        ratingCount: 640
+    },
+    {
+        productId: "hazelnut-brown",
+        productName: "Hazelnut Brown",
+        breweryName: "Brown Street Brewing",
+        style: "Brown Ale - Nut",
+        alcoholByVolume: "5.2%",
+        category: "Beer",
+        flavourTag: "dark",
+        image: "assets/hazelnut-brown.jpg",
+        smallSizePrice: 8,
+        largeSizePrice: 15,
+        description: "Warm, Nutty, Comforting",
+        moreInformation: "A malty brown ale with toasted hazelnut and caramel notes, rounded off with a smooth, lightly sweet finish.",
+        rating: 3.9,
+        ratingCount: 870
+    },
+    {
+        productId: "highwayman",
+        productName: "Highwayman",
+        breweryName: "Highwayman Brewing",
+        style: "Amber Ale",
+        alcoholByVolume: "5.8%",
+        category: "Beer",
+        flavourTag: "craft",
+        image: "assets/highwayman.jpg",
+        smallSizePrice: 8.5,
+        largeSizePrice: 16,
+        description: "Rich Malt, Bold Character",
+        moreInformation: "A robust amber ale with caramel malt depth and a firm hop backbone. Full-flavoured without being heavy.",
+        rating: 4.0,
+        ratingCount: 1010
+    },
+    {
+        productId: "pilsner",
+        productName: "Pilsner",
+        breweryName: "Catfish Brewing",
+        style: "Pilsner - Czech",
+        alcoholByVolume: "4.6%",
+        category: "Beer",
+        flavourTag: "craft",
+        image: "assets/pilsner.png",
+        smallSizePrice: 7,
+        largeSizePrice: 13,
+        description: "Clean, Crisp, Classic",
+        moreInformation: "A Czech-style pilsner with a soft bready malt base, delicate floral hops and a clean, dry, refreshing finish.",
+        rating: 4.1,
+        ratingCount: 1450
+    }
 ];
 
 function findMatchingProducts(searchText) {
@@ -172,21 +352,23 @@ function findMatchingProducts(searchText) {
 
 function createProductCardHtml(product) {
     return `
-        <article class='product-result-card'>
-            <div class='product-image-wrapper'>
-                <img src='${product.image}' alt='${product.productName}'>
-            </div>
-            <div class='product-details'>
-                <p class='brewery-name'>${product.breweryName}</p>
-                <h2 class='product-name'>${product.productName}</h2>
-                <p class='product-style'>${product.style} · ${product.alcoholByVolume} ABV</p>
-                <div class='price-options'>
-                    <span class='price-pill'>285ML · $${product.smallSizePrice}</span>
-                    <span class='price-pill'>570ML · $${product.largeSizePrice}</span>
+        <a class='product-link' href='product.html?product=${product.productID}'>
+            <article class='prpoduct-result-card'>
+                <div class='product-image-wrapper'>
+                    <img src='${product.image}' alt='${product.productName}'>
                 </div>
-            </div>
-        </article>
-    `;           
+                <div class='product-details'>
+                    <p class='brewery-name'>${product.breweryName}</p>
+                    <h2 class='product-name'>${product.productName}</h2>
+                    <p class='product-style'>${product.style} · ${product.alcoholByVolume} ABV</p>
+                    <div class='price-options'>
+                        <span class='price-pill'>285ML · $${product.smallSizePrice}</span>
+                        <span class='price-pill'>570ML · $${product.largeSizePrice}</span>
+                    </div>
+                </div>
+            </article>
+        </a>
+    `;              
 }
 
 const resultList = document.getElementById('result-list');
@@ -200,7 +382,7 @@ if (resultList) {
         resultSearchInput.addEventListener('keydown', function(event) {
             if (event.key === 'Enter') {
                 const typedText = resultSearchInput.value.trim();
-                window.location.href = 'result.html?query' + encodeURIComponent(typedText);
+                window.location.href = 'result.html?query=' + encodeURIComponent(typedText);
             }
         });
     }
@@ -220,4 +402,129 @@ if (resultList) {
     } else {
         resultList.innerHTML = matchingProducts.map(createProductCardHtml).join('');
     }
+}
+
+const productPage = document.getElementById('product-page');
+
+if (productPage) {
+    const productPageParameters = new URLSearchParams(window.location.search);
+    const requestedProductId = productPageParameters.get('product');
+
+    const currentProduct = productCatalog.find(function (product) {
+        return product.productID === requestedProductId;
+    });
+
+    if (!currentProduct) {
+        productPage.innerHTML = '<p class="no-results">Sorry, this product was not found.</p>';
+    } else {
+        showProductDetail(currentProduct);
+    }
+}
+
+function showProductDetail(product) {
+    document.title = product.productName + ' - The Catfish Bar';
+    document.getElementById('product-name').textContent = product.productName;
+    document.getElementById('product-style').textContent = product.style + ' · ' + product.alcoholByVolume + 'ABV';
+
+    const productImage = document.getElementById('product-image');
+    productImage.src = product.image;
+    productImage.alt = product.productName;
+
+    const purchasePanel = document.getElementById('purchase-panel');
+    purchasePanel.innerHTML = `
+        <div class="size-row">
+            <span class="size-label">285ML · $${product.smallSizePrice}</span>
+            <div class="quantity-stepper">
+                <button type="button" class="quantity-button" data-size="small" data-change="-1">-</button>
+                <span class="quantity-number" id="quantity-small">0</span>
+                <button type="button" class="quantity-button" data-size="small" data-change="1">+</button>
+            </div>
+        </div>
+
+        <div class="size-row">
+        <span class="size-label">570ML · $${product.largeSizePrice}</span>
+            <div class="quantity-stepper">
+                <button type="button" class="quantity-button" data-size="large" data-change="-1">-</button>
+                <span class="quantity-number" id="quantity-large">0</span>
+                <button type="button" class="quantity-button" data-size="large" data-change="1">+</button>
+            </div>
+        </div>
+
+        <button type="button" id="go-to-cart-button" class="go-to-cart-button">Go To Cart</button>
+    `;
+
+    document.getElementById('poduct-description').textContent = product.description;
+    document.getElementById('more-information').textContent = product.moreInformation;
+    document.getElementById('poduct-reviews').textContent = 'Rating: ' + product.rating + '/5 (' + product.ratingCount + 'reviews)';
+
+    const relatedProducts = productCatalog.filter(function (otherProduct) {
+        return otherProduct.flavourTag === product.flavourTag
+            && otherProduct.productId !== product.productID;
+    }).slice(0, 3);
+
+    const youMayAlsoLike = document.getElementById('you-may-also-like');
+    if (relatedProducts.length === 0) {
+        youMayAlsoLike.textContent = 'No related drinks right now.';
+    } else {
+        youMayAlsoLike.innerHTML = relatedProducts.map(function (relatedProduct) {
+            return `
+                <a class="related-product" href="product.html?product=${relatedProduct.productId}">
+                    <img src="${relatedProduct.image}" alt="${relatedProduct.productName}">
+                    <span>${relatedProduct.productName}</span>
+                </a>
+            `;
+        }).join('');
+    }
+    
+    setUpQuantitySteppers();
+    setUpAccordions();
+    setUpGoToCartButton();
+}
+
+function setUpQuantitySteppers() {
+    const quantityButtons = document.querySelectorAll('.quantity-button');
+    quantityButtons.forEach(function (button) {
+        button.addEventListener('click', function() {
+            const size = button.getAttribute('data-size');
+            const change = Number(button.getAttribute('data-change'));
+            const numberElement = document.getElementById('quantity-' + size);
+
+            let currentNumber = Number(numberElement.textContent) + change;
+            if (currentNumber < 0) {
+                currentNumber = 0;
+            }
+            numberElement.textContent = currentNumber;
+        });
+    });
+}
+
+function setUpAccordions() {
+    const accordionToggles = document.querySelectorAll('.accordion-toggle');
+    accordionToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function() {
+            toggle.classList.toggle('open');
+            const content = toggle.nextElementSibling;
+            content.classList.toggle('open');
+        });
+    });
+}
+
+function setUpGoToCartButton() {
+    const goToCartButton = document.getElementById('go-to-cart-button');
+    if (!goToCartButton) {
+        return;
+    }
+    goToCartButton.addEventListener('click', function() {
+        const smallQuantity = Number(document.getElementById('quantity-small').textContent);
+        const largeQuantity = Number(document.getElementById('quantity-large').textContent);
+        
+        if (smallQuantity === 0 && largeQuantity === 0) {
+            goToCartButton.textContent = 'Please choose a quantity first';
+            setTimeout(function() {
+                goToCartButton.textContent = 'Go To Cart';
+            }, 1500);
+            return;
+        }
+        window.location.href = 'cart.html';
+    });
 }
