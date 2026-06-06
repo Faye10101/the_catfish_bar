@@ -352,8 +352,8 @@ function findMatchingProducts(searchText) {
 
 function createProductCardHtml(product) {
     return `
-        <a class='product-link' href='product.html?product=${product.productID}'>
-            <article class='prpoduct-result-card'>
+        <a class='product-link' href='product.html?product=${product.productId}'>
+            <article class='product-result-card'>
                 <div class='product-image-wrapper'>
                     <img src='${product.image}' alt='${product.productName}'>
                 </div>
@@ -391,7 +391,7 @@ if (resultList) {
     const resultHeading = document.getElementById('result-heading');
     if (resultHeading)  {
         if (searchQuery === '') {
-            resultHeading.textContent = 'Showing all ${matchingProducts.length} drinks';
+            resultHeading.textContent = `Showing all ${matchingProducts.length} drinks`;
         } else {
             resultHeading.innerHTML = `${matchingProducts.length} result(s) for <strong>'${searchQuery}'</strong>`;
         }
@@ -411,7 +411,7 @@ if (productPage) {
     const requestedProductId = productPageParameters.get('product');
 
     const currentProduct = productCatalog.find(function (product) {
-        return product.productID === requestedProductId;
+        return product.productId === requestedProductId;
     });
 
     if (!currentProduct) {
@@ -453,13 +453,13 @@ function showProductDetail(product) {
         <button type="button" id="go-to-cart-button" class="go-to-cart-button">Go To Cart</button>
     `;
 
-    document.getElementById('poduct-description').textContent = product.description;
+    document.getElementById('product-description').textContent = product.description;
     document.getElementById('more-information').textContent = product.moreInformation;
-    document.getElementById('poduct-reviews').textContent = 'Rating: ' + product.rating + '/5 (' + product.ratingCount + 'reviews)';
+    document.getElementById('product-reviews').textContent = 'Rating: ' + product.rating + ' / 5 (' + product.ratingCount + ' reviews)';
 
     const relatedProducts = productCatalog.filter(function (otherProduct) {
         return otherProduct.flavourTag === product.flavourTag
-            && otherProduct.productId !== product.productID;
+            && otherProduct.productId !== product.productId;
     }).slice(0, 3);
 
     const youMayAlsoLike = document.getElementById('you-may-also-like');
@@ -478,7 +478,7 @@ function showProductDetail(product) {
     
     setUpQuantitySteppers();
     setUpAccordions();
-    setUpGoToCartButton();
+    setUpGoToCartButton(product);
 }
 
 function setUpQuantitySteppers() {
@@ -527,4 +527,135 @@ function setUpGoToCartButton() {
         }
         window.location.href = 'cart.html';
     });
+}
+
+function getCart() {
+    try {
+        const storedCart = localStorage.getItem('catfishCart');
+        return storedCart ? JSON.parse(storedCart) : [];
+    } catch (error) {
+        return [];
+    }
+}
+ 
+function saveCart(cart) {
+    try {
+        localStorage.setItem('catfishCart', JSON.stringify(cart));
+    } catch (error) {
+        
+    }
+}
+ 
+function clearCart() {
+    try {
+        localStorage.removeItem('catfishCart');
+    } catch (error) {
+        
+    }
+}
+ 
+function addItemsToCart(newItems) {
+    const cart = getCart();
+    newItems.forEach(function (newItem) {
+        const existingItem = cart.find(function (item) {
+            return item.productId === newItem.productId
+                && item.sizeLabel === newItem.sizeLabel;
+        });
+        if (existingItem) {
+            existingItem.quantity = existingItem.quantity + newItem.quantity;
+        } else {
+            cart.push(newItem);
+        }
+    });
+    saveCart(cart);
+}
+ 
+function calculateCartTotals(cart) {
+    let totalQuantity = 0;
+    let totalPrice = 0;
+    cart.forEach(function (item) {
+        totalQuantity = totalQuantity + item.quantity;
+        totalPrice = totalPrice + item.quantity * item.unitPrice;
+    });
+    return { totalQuantity: totalQuantity, totalPrice: totalPrice };
+}
+ 
+function formatPrice(value) {
+    const rounded = Math.round(value * 100) / 100;
+    return '$' + rounded;
+}
+
+const cartItemsContainer = document.getElementById('cart-items');
+ 
+if (cartItemsContainer) {
+    const cart = getCart();
+    const totals = calculateCartTotals(cart);
+    const totalQuantityElement = document.getElementById('cart-total-quantity');
+    const totalPriceElement = document.getElementById('cart-total-price');
+ 
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p class="cart-empty">Your cart is empty.</p>';
+        totalQuantityElement.textContent = '0';
+        totalPriceElement.textContent = formatPrice(0);
+    } else {
+        cartItemsContainer.innerHTML = cart.map(function (item) {
+            const lineTotal = item.quantity * item.unitPrice;
+            return `
+                <div class="cart-row">
+                    <span class="cart-item-name">${item.productName}<br><small>${item.sizeLabel}</small></span>
+                    <span class="cart-item-quantity">${item.quantity}</span>
+                    <span class="cart-item-price">${formatPrice(lineTotal)}</span>
+                </div>
+            `;
+        }).join('');
+        totalQuantityElement.textContent = totals.totalQuantity;
+        totalPriceElement.textContent = formatPrice(totals.totalPrice);
+    }
+}
+
+const paymentForm = document.getElementById('payment-form');
+ 
+if (paymentForm) {
+    paymentForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+ 
+        const requiredFieldIds = [
+            'full-name', 'phone-number', 'email-address',
+            'name-on-card', 'card-number', 'expiry-date', 'cvv'
+        ];
+ 
+        let everythingFilled = true;
+ 
+        requiredFieldIds.forEach(function (fieldId) {
+            const field = document.getElementById(fieldId);
+            if (field.value.trim() === '') {
+                field.classList.add('field-error');
+                everythingFilled = false;
+            } else {
+                field.classList.remove('field-error');
+            }
+        });
+ 
+        const emailField = document.getElementById('email-address');
+        if (emailField.value.trim() !== '' && !emailField.value.includes('@')) {
+            emailField.classList.add('field-error');
+            everythingFilled = false;
+        }
+ 
+        const paymentMessage = document.getElementById('payment-message');
+        if (!everythingFilled) {
+            paymentMessage.textContent = 'Please fill in all required fields with a valid email.';
+            return;
+        }
+ 
+        paymentMessage.textContent = '';
+        clearCart();
+        window.location.href = 'confirm.html';
+    });
+}
+ 
+const confirmPage = document.getElementById('confirm-page');
+ 
+if (confirmPage) {
+    clearCart();
 }

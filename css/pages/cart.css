@@ -1,0 +1,102 @@
+.receipt {
+    max-width: 32rem;
+    margin: 1.5rem auto 0 auto;
+    padding: 2rem 1.75rem;
+    background-color: #efe2c4;
+    background-image:
+        radial-gradient(circle at 20% 15%, rgba(150, 120, 70, 0.12), transparent 55%),
+        radial-gradient(circle at 80% 85%, rgba(120, 90, 50, 0.14), transparent 55%);
+    border: 0.06rem solid #c9b48a;
+    border-radius: 0.4rem;
+    box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.35);
+    color: var(--vintage-black);
+}
+ 
+.receipt-title {
+    text-align: center;
+    color: var(--vintage-red);
+    letter-spacing: 0.08rem;
+    margin-bottom: 1.5rem;
+}
+ 
+.cart-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    font-size: 1.1rem;
+}
+ 
+.cart-item-name {
+    text-transform: uppercase;
+    letter-spacing: 0.04rem;
+}
+ 
+.cart-item-name small {
+    text-transform: none;
+    letter-spacing: 0;
+    opacity: 0.7;
+    font-style: italic;
+}
+ 
+.cart-item-quantity {
+    min-width: 2.5rem;
+    text-align: center;
+}
+ 
+.cart-item-price {
+    min-width: 3.5rem;
+    text-align: right;
+}
+ 
+.receipt-divider {
+    border-top: 0.1rem solid rgba(80, 60, 30, 0.5);
+    margin: 1rem 0;
+}
+ 
+.cart-total-row {
+    font-size: 1.2rem;
+    color: var(--vintage-red);
+}
+ 
+.cart-empty {
+    text-align: center;
+    font-style: italic;
+    padding: 1.5rem 0;
+}
+
+.cart-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem auto;
+}
+ 
+.cart-button {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.7rem 1.8rem;
+    border-radius: 0.4rem;
+    font-weight: bold;
+    letter-spacing: 0.06rem;
+    text-transform: uppercase;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+ 
+.buy-more-button {
+    background-color: var(--vintage-orange);
+    color: var(--vintage-red);
+}
+ 
+.pay-now-button {
+    background-color: var(--vintage-green);
+    color: var(--vintage-yellow);
+    border: 0.06rem solid var(--vintage-yellow);
+}
+ 
+.cart-button:hover {
+    transform: translateY(-0.15rem);
+}

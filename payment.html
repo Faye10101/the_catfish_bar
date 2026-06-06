@@ -3,54 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/layout/footer.css">
+    <link rel="stylesheet" href="css/layout/header.css">
+    <link rel="stylesheet" href="css/layout/main.css">
+    <link rel="stylesheet" href="css/layout/responsive.css">
+    <link rel="stylesheet" href="css/pages/payment.css">
+    <link rel="stylesheet" href="css/system/color.css">
+    <link rel="stylesheet" href="css/system/reset.css">
+    <link rel="stylesheet" href="css/system/typography.css">
     <title>Payment</title>
 </head>
+
 <body>
-    <header>
+    <header class="page-header">
+        <a href="cart.html" class="back-link" aria-label="Back to cart">←</a>
         <h1>The Catfish Bar</h1>
     </header>
+
     <main>
-        <h2>Delivery & Payment Details</h2>
-        <div>
-            <h3>Your Information</h3>
-            <div>
-            <input type="text" placeholder="Full Name" name="payment">
-            </div>
-            <div>
-            <input type="text" placeholder="Phone Number" name="payment">
-            </div>
-            <div>
-            <input type="text" placeholder="Email Address" name="payment">
-            </div>
-        </div>
-        <div>
-            <h3>Payment Details</h3>
-            <div>
-            <input type="text" placeholder="Name on Card" name="payment">
-            </div>
-            <div>
-            <input type="text" placeholder="Card Number" name="payment">
-            </div>
-            <div>
-            <input type="text" placeholder="Expiry Date(DD/MM/YY)" name="payment">
-            </div>
-            <div>
-            <input type="text" placeholder="CVV" name="payment">
-            </div>
-        <div>
-            <h3>Delivery Address (Optional)</h3>
-            <div>
-            <input type="text" placeholder="Address" name="payment">
-            </div>
-            <div>
-            <input type="text" placeholder="State" name="payment">
-            </div>
-            <div>
-            <input type="text" placeholder="Post Code" name="payment">
-            </div>
-        </div>
-        <button type="button">Confirm</button>
+
+        <form id="payment-form" class="payment-box">
+            <h2 class="payment-title">Delivery & Paymennt Details</h2>
+
+            <h3 class="payment-section-title">Your Information</h3>
+            <input type="text" id="full-name" class="payment-input" placeholder="Full Name">
+            <input type="text" id="phone-number" class="payment-input" placeholder="Phone Number">
+            <input type="text" id="email-address" class="payment-input" placeholder="Email Address">
+            
+            <h3 class="payment-section-title">Payment Details</h3>
+            <input type="text" id="name-on-card" class="payment-input" placeholder="Name on Card">
+            <input type="text" id="card-number" class="payment-input" placeholder="Card Number">
+            <input type="text" id="expiry-date" class="payment-input" placeholder="Expiry Date">
+            <input type="text" id="cvv" class="payment-input" placeholder="CVV">
+
+            <h3 class="payment-section-title">Delivery Address (Optional)</h3>
+            <input type="text" id="address" class="payment-input" placeholder="Address">
+            <input type="text" id="State" class="payment-input" placeholder="State">
+            <input type="text" id="post-code" class="payment-input" placeholder="Post Code">
+
+            <p id="payment-message" class="payment-message"></p>
+
+            <button type="submit" class="confirm-button">Confirm</button>
+        </form>
     </main>
+
+    <footer>
+        <p>
+            <strong>Get in Touch</strong>
+            Phone: (03) 9417 6420
+            Email: info@thecatfish.com.au
+        </p>
+        <p>
+            <strong>Find Us</strong>
+            30 Gertrude Street Fitzroy
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+    
 </body>
 </html>

@@ -1,0 +1,101 @@
+.page-header {
+    position: relative;
+}
+ 
+.back-link {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--vintage-yellow);
+    text-decoration: none;
+    font-size: 2.2rem;
+    line-height: 1;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+ 
+.back-link:hover {
+    color: var(--vintage-orange);
+    transform: translateY(-50%) translateX(-0.25rem);
+}
+ 
+.payment-box {
+    max-width: 32rem;
+    margin: 1.5rem auto;
+    padding: 1.75rem 1.5rem;
+    border: 0.06rem solid var(--vintage-yellow);
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+ 
+.payment-title {
+    text-align: center;
+    color: var(--vintage-yellow);
+    letter-spacing: 0.06rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+ 
+.payment-section-title {
+    text-align: center;
+    color: var(--vintage-orange);
+    letter-spacing: 0.06rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+ 
+.payment-input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 1.5rem;
+    background-color: var(--vintage-yellow);
+    color: var(--vintage-black);
+    font-size: 1rem;
+    font-family: inherit;
+}
+ 
+.payment-input::placeholder {
+    color: #6b5b3e;
+    text-transform: uppercase;
+    letter-spacing: 0.04rem;
+    font-size: 0.85rem;
+}
+ 
+.payment-input:focus {
+    outline: 0.12rem solid var(--vintage-orange);
+}
+ 
+.payment-input.field-error {
+    outline: 0.12rem solid var(--vintage-red);
+    background-color: #ffeaea;
+}
+ 
+.payment-message {
+    color: var(--vintage-orange);
+    text-align: center;
+    min-height: 1.2rem;
+    margin-top: 0.5rem;
+}
+ 
+.confirm-button {
+    align-self: center;
+    margin-top: 1rem;
+    padding: 0.7rem 2.5rem;
+    background-color: var(--vintage-green);
+    color: var(--vintage-yellow);
+    border: 0.06rem solid var(--vintage-yellow);
+    border-radius: 0.4rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    letter-spacing: 0.06rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+ 
+.confirm-button:hover {
+    transform: translateY(-0.15rem);
+    background-color: var(--vintage-red);
+}
