@@ -47,17 +47,19 @@ function showProducts(catagory) {
     const currentData = webData[catagory];
 
     function makeHtml(list) {
-        let htmlContent = '';
-        list.forEach(function(item) {
-            htmlContent += `
-                <div class='item-card' data-tag='${item.tag}' data-name='${item.name.toLowerCase()}'>
-                    <img src='${item.img}' alt='${item.name}'>
+    let htmlContent = '';
+    list.forEach(function(item) {
+        htmlContent += `
+            <a href="product.html?name=${encodeURIComponent(item.name)}" style="text-decoration: none;">
+                <div class="item-card" data-tag="${item.tag}" data-name="${item.name.toLowerCase()}">
+                    <img src="${item.img}" alt="${item.name}">
                     <p>${item.name}</p>
                 </div>
-            `;
-        });
-        return htmlContent;
-    }
+            </a>
+        `;
+    });
+    return htmlContent;
+}
 
     if (bestContainer) bestContainer.innerHTML = makeHtml(currentData.best);
     if (latestContainer) latestContainer.innerHTML = makeHtml(currentData.latest);
@@ -509,7 +511,7 @@ function setUpAccordions() {
     });
 }
 
-function setUpGoToCartButton() {
+function setUpGoToCartButton(product) {
     const goToCartButton = document.getElementById('go-to-cart-button');
     if (!goToCartButton) {
         return;
@@ -517,7 +519,7 @@ function setUpGoToCartButton() {
     goToCartButton.addEventListener('click', function() {
         const smallQuantity = Number(document.getElementById('quantity-small').textContent);
         const largeQuantity = Number(document.getElementById('quantity-large').textContent);
-        
+
         if (smallQuantity === 0 && largeQuantity === 0) {
             goToCartButton.textContent = 'Please choose a quantity first';
             setTimeout(function() {
@@ -525,6 +527,28 @@ function setUpGoToCartButton() {
             }, 1500);
             return;
         }
+
+        const itemsToAdd = [];
+        if (smallQuantity > 0) {
+            itemsToAdd.push({
+                productId: product.productId,
+                productName: product.productName,
+                sizeLabel: '285ML',
+                unitPrice: product.smallSizePrice,
+                quantity: smallQuantity
+            });
+        }
+        if (largeQuantity > 0) {
+            itemsToAdd.push({
+                productId: product.productId,
+                productName: product.productName,
+                sizeLabel: '570ML',
+                unitPrice: product.largeSizePrice,
+                quantity: largeQuantity
+            });
+        }
+
+        addItemsToCart(itemsToAdd);
         window.location.href = 'cart.html';
     });
 }
