@@ -1,8 +1,24 @@
 :root {
-    --vintage-green: #004d40;
-    --vintage-orange: #f5a623;
-    --vintage-red: #8b0000;
-    --vintage-yellow: #fdf5e6;
-    --vintage-black: #1a1a1a;
-    --vintage-white: #ffffff;
+    --vintage-green:    #004d40;   /* deep teal — header, dark surfaces */
+    --vintage-orange:   #e8961f;   /* amber — primary accent, CTAs */
+    --vintage-red:      #7a0000;   /* deep crimson — ribbon, cards */
+    --vintage-cream:    #fdf5e6;   /* warm cream — body bg, light text on dark */
+    --vintage-tan:      #c8a96e;   /* warm tan — borders, dividers, secondary text */
+    --vintage-black:    #1a1a1a;   /* near-black — body text on light bg */
+    --vintage-white:    #ffffff;   /* pure white — product image bg */
+
+    --bg-page:          #fdf5e6;
+    --bg-dark:          #004d40;
+    --bg-card:          #5a0000;
+    --bg-receipt:       #efe2c4;
+
+    --text-on-dark:     #fdf5e6;   /* cream — use on green/red backgrounds */
+    --text-on-light:    #1a1a1a;   /* near-black — use on cream backgrounds */
+    --text-accent:      #e8961f;   /* amber — headings, highlights on dark bg */
+    --text-muted:       #c8a96e;   /* tan — secondary text on dark bg */
+
+    --border-accent:    #e8961f;
+    --border-subtle:    #c9b48a;
+
+    --vintage-yellow:   #fdf5e6;
 }

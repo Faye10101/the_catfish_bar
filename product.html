@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/system/color.css">
     <link rel="stylesheet" href="css/system/reset.css">
     <link rel="stylesheet" href="css/system/typography.css">
-    <title>Product</title>
+    <title>Product · The Catfish Bar</title>
 </head>
 
 <body>
@@ -21,9 +21,13 @@
         <h1>The Catfish Bar</h1>
     </header>
 
-    <section class="product-hero">
-        <img src="assets/liquor-shelf.png" alt="liquor-shelf">
-    </section>
+    <nav class="global-nav">
+        <a href="index.html" class="global-nav-link">Home</a>
+        <a href="search.html" class="global-nav-link">Shop</a>
+        <a href="cart.html" class="global-nav-link">Cart</a>
+    </nav>
+
+    <div id="cart-toast" class="cart-toast"></div>
 
     <main id="product-page">
         <div class="product-banner">
@@ -31,37 +35,58 @@
         </div>
         <p id="product-style" class="product-style-line"></p>
 
-        <section class="product-pruchase">
-            <img id="product-image" src="" alt="">
-            <div id="pruchase-panel"></div>
+        <section class="product-purchase">
+            <div class="product-image-frame">
+                <img id="product-image" src="" alt="">
+            </div>
+            <div id="purchase-panel"></div>
         </section>
-        <p id="product-description" class="product-style-line"></p>
+        <p id="product-description" class="product-description-tag"></p>
 
         <button type="button" class="accordion-toggle">
-            More Information <span class="accordioin-icon">&#9662;</span>
+            More Information <span class="accordion-icon">&#9662;</span>
         </button>
-        <div class="accordioin-content">
+        <div class="accordion-content">
             <p id="more-information"></p>
         </div>
 
         <button type="button" class="accordion-toggle">
-            You May Also Like <span class="accordioin-icon">&#9662;</span>
+            Reviews <span class="accordion-icon">&#9662;</span>
         </button>
-        <div class="accordioin-content">
+        <div class="accordion-content">
+            <div id="product-reviews"></div>
+        </div>
+
+        <button type="button" class="accordion-toggle">
+            You May Also Like <span class="accordion-icon">&#9662;</span>
+        </button>
+        <div class="accordion-content">
             <div id="you-may-also-like" class="related-products"></div>
         </div>
     </main>
 
+    <div class="section-divider"><span>✦ ✦ ✦</span></div>
+
     <footer>
-        <p>
-            <strong>Get in Touch</strong>
-            Phone: (03) 9417 6420
-            Email: info@thecatfish.com.au
-        </p>
-        <p>
-            <strong>Find Us</strong>
-            30 Gertrude Street Fitzroy
-        </p>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <p class="footer-heading">Get in Touch</p>
+                <p>Phone: (03) 9417 6420</p>
+                <p>Email: info@thecatfish.com.au</p>
+            </div>
+            <div class="footer-col">
+                <p class="footer-heading">Find Us</p>
+                <p>30 Gertrude Street</p>
+                <p>Fitzroy, VIC 3065</p>
+            </div>
+            <div class="footer-col">
+                <p class="footer-heading">Explore</p>
+                <p><a href="index.html" class="footer-link">Home</a></p>
+                <p><a href="search.html" class="footer-link">Shop</a></p>
+                <p><a href="cart.html" class="footer-link">Cart</a></p>
+            </div>
+        </div>
+        <p class="footer-copy">© 2026 The Catfish Bar · 30 Gertrude St Fitzroy · All rights reserved</p>
     </footer>
 
     <script src="script.js"></script>

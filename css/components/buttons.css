@@ -1,16 +1,19 @@
 .text a {
     text-decoration: none;
-    color: #fdf5e6;
-    border: 2px solid #fdf5e6;
-    padding: 0.9rem 2rem;
-    letter-spacing: 1px;
+    color: var(--text-on-dark);
+    border: 2px solid var(--text-on-dark);
+    padding: 0.9rem 2.2rem;
+    letter-spacing: 0.08rem;
     transition: all 0.3s ease;
     position: relative;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 0.95rem;
 }
 
 .text a:hover {
-    background-color: #fdf5e6;
-    color: #8b0000;
+    background-color: var(--vintage-orange);
+    border-color: var(--vintage-orange);
+    color: #3a2000;
     transform: translateY(-2px);
 }
 
@@ -18,17 +21,18 @@
     content: '✦';
     position: absolute;
     top: -12px;
-    right:-12px;
-    opacity:0;
-    transform:rotate(-20deg) scale(0.5);
-    transition:0.3s;
-    font-size:1.2rem;
-    color:#f5a623;
+    right: -12px;
+    opacity: 0;
+    transform: rotate(-20deg) scale(0.5);
+    transition: 0.3s;
+    font-size: 1.2rem;
+    color: var(--text-accent);
+    pointer-events: none;
 }
 
 .text a:hover::after {
-    opacity:1;
-    transform:rotate(10deg) scale(1);
+    opacity: 1;
+    transform: rotate(10deg) scale(1);
 }
 
 .price-options {
@@ -36,12 +40,12 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-top: 0.5rem;
+    margin-top: 0.6rem;
 }
 
 .price-pill {
-    background-color: var(--vintage-yellow);
-    color: var(--vintage-red);
+    background-color: var(--vintage-orange);
+    color: #3a2000;
     border-radius: 1rem;
     padding: 0.35rem 0.9rem;
     font-weight: bold;
@@ -49,4 +53,3 @@
     font-size: 0.9rem;
     white-space: nowrap;
 }
-

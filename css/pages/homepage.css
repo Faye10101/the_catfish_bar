@@ -1,3 +1,7 @@
+.hero {
+    overflow: hidden;
+}
+
 .hero img {
     width: 100%;
     max-height: 45rem;
@@ -5,20 +9,29 @@
     display: block;
 }
 
+.section-divider {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-accent);
+    font-size: 1.1rem;
+    letter-spacing: 0.6rem;
+    opacity: 0.6;
+}
+
 .text {
     width: 50%;
-    background-color: #8b0000;
+    background-color: var(--vintage-red);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    padding: 3rem 2rem;
+    gap: 1.8rem;
+    padding: 4rem 3rem;
     text-align: center;
 }
 
 .text h2 {
-    color:#fdf5e6;
-    font-size: clamp(2rem,4vw,4rem);
+    color: var(--text-on-dark);
+    font-size: clamp(2rem, 4vw, 4rem);
     letter-spacing: 3px;
 }

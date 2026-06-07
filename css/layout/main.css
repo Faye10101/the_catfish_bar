@@ -3,5 +3,7 @@ main {
     flex-direction: column;
     width: 100%;
     max-width: 1440px;
-    margin:auto;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
 }

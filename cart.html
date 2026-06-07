@@ -11,14 +11,20 @@
     <link rel="stylesheet" href="css/system/color.css">
     <link rel="stylesheet" href="css/system/reset.css">
     <link rel="stylesheet" href="css/system/typography.css">
-    <title>Shopping Cart</title>
+    <title>Cart · The Catfish Bar</title>
 </head>
 
 <body>
 
     <header>
-            <h1>The Catfish Bar</h1>
+        <h1>The Catfish Bar</h1>
     </header>
+
+    <nav class="global-nav">
+        <a href="index.html" class="global-nav-link">Home</a>
+        <a href="search.html" class="global-nav-link">Shop</a>
+        <a href="cart.html" class="global-nav-link active-nav">Cart</a>
+    </nav>
 
     <main>
         <section class="receipt">
@@ -37,19 +43,31 @@
         </div>
     </main>
 
+    <div class="section-divider"><span>✦ ✦ ✦</span></div>
+
     <footer>
-        <p>
-            <strong>Get in Touch</strong>
-            Phone: (03) 9417 6420
-            Email: info@thecatfish.com.au
-        </p>
-        <p>
-            <strong>Find Us</strong>
-            30 Gertrude Street Fitzroy
-        </p>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <p class="footer-heading">Get in Touch</p>
+                <p>Phone: (03) 9417 6420</p>
+                <p>Email: info@thecatfish.com.au</p>
+            </div>
+            <div class="footer-col">
+                <p class="footer-heading">Find Us</p>
+                <p>30 Gertrude Street</p>
+                <p>Fitzroy, VIC 3065</p>
+            </div>
+            <div class="footer-col">
+                <p class="footer-heading">Explore</p>
+                <p><a href="index.html" class="footer-link">Home</a></p>
+                <p><a href="search.html" class="footer-link">Shop</a></p>
+                <p><a href="cart.html" class="footer-link">Cart</a></p>
+            </div>
+        </div>
+        <p class="footer-copy">© 2026 The Catfish Bar · 30 Gertrude St Fitzroy · All rights reserved</p>
     </footer>
 
     <script src="script.js"></script>
-    
+
 </body>
 </html>

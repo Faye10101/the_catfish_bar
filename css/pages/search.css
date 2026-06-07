@@ -1,11 +1,29 @@
 .shop-group {
-    margin-bottom: 2.5rem;
-    text-align: center;
+    margin-bottom: 3.5rem;
 }
 
-.shop-group h3{
-    color: #e6cb94;
-    letter-spacing: 0.125rem;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+.shop-group h3 {
+    color: var(--text-accent);
+    letter-spacing: 0.15rem;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    padding: 0 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(200, 169, 110, 0.3);
+}
+
+.item-card-link {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    flex-shrink: 0;
+}
+
+.section-divider {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-accent);
+    font-size: 1.1rem;
+    letter-spacing: 0.6rem;
+    opacity: 0.6;
 }

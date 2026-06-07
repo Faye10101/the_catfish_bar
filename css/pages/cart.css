@@ -1,69 +1,81 @@
 .receipt {
-    max-width: 32rem;
-    margin: 1.5rem auto 0 auto;
-    padding: 2rem 1.75rem;
+    max-width: 36rem;
+    margin: 2rem auto 0 auto;
+    padding: 2.5rem;
     background-color: #efe2c4;
     background-image:
-        radial-gradient(circle at 20% 15%, rgba(150, 120, 70, 0.12), transparent 55%),
-        radial-gradient(circle at 80% 85%, rgba(120, 90, 50, 0.14), transparent 55%);
-    border: 0.06rem solid #c9b48a;
-    border-radius: 0.4rem;
-    box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.35);
-    color: var(--vintage-black);
+        radial-gradient(circle at 20% 15%, rgba(150, 120, 70, 0.1), transparent 55%),
+        radial-gradient(circle at 80% 85%, rgba(120, 90, 50, 0.12), transparent 55%);
+    border: 1px solid #c9b48a;
+    border-radius: 0.5rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    color: var(--text-on-light);
 }
- 
+
 .receipt-title {
     text-align: center;
     color: var(--vintage-red);
-    letter-spacing: 0.08rem;
-    margin-bottom: 1.5rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    border-bottom: 2px solid rgba(122, 0, 0, 0.25);
+    padding-bottom: 1rem;
 }
- 
+
 .cart-row {
     display: grid;
     grid-template-columns: 1fr auto auto;
     align-items: center;
-    gap: 1rem;
-    padding: 0.6rem 0;
-    font-size: 1.1rem;
+    gap: 1.2rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(80, 60, 30, 0.2);
+    font-size: 1rem;
 }
- 
+
+.cart-row:last-child { border-bottom: none; }
+
 .cart-item-name {
     text-transform: uppercase;
     letter-spacing: 0.04rem;
+    color: var(--text-on-light);
 }
- 
+
 .cart-item-name small {
     text-transform: none;
     letter-spacing: 0;
-    opacity: 0.7;
+    opacity: 0.65;
     font-style: italic;
+    display: block;
 }
- 
+
 .cart-item-quantity {
     min-width: 2.5rem;
     text-align: center;
-}
- 
-.cart-item-price {
-    min-width: 3.5rem;
-    text-align: right;
-}
- 
-.receipt-divider {
-    border-top: 0.1rem solid rgba(80, 60, 30, 0.5);
-    margin: 1rem 0;
-}
- 
-.cart-total-row {
-    font-size: 1.2rem;
     color: var(--vintage-red);
+    font-weight: bold;
 }
- 
+
+.cart-item-price {
+    min-width: 4rem;
+    text-align: right;
+    font-weight: bold;
+    color: var(--text-on-light);
+}
+
+.cart-total-row {
+    font-size: 1.15rem;
+    color: var(--vintage-red);
+    font-weight: bold;
+    padding-top: 1rem;
+    border-top: 2px solid rgba(122, 0, 0, 0.3) !important;
+    border-bottom: none !important;
+}
+
 .cart-empty {
     text-align: center;
     font-style: italic;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
+    color: rgba(26, 26, 26, 0.55);
 }
 
 .cart-actions {
@@ -71,32 +83,47 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
-    margin: 2rem auto;
+    margin: 2.5rem auto 1rem auto;
 }
- 
+
 .cart-button {
     display: inline-block;
     text-decoration: none;
     text-align: center;
-    padding: 0.7rem 1.8rem;
+    padding: 0.85rem 2.2rem;
     border-radius: 0.4rem;
     font-weight: bold;
-    letter-spacing: 0.06rem;
+    letter-spacing: 0.07rem;
     text-transform: uppercase;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    font-family: 'Playfair Display SC', serif;
 }
- 
+
 .buy-more-button {
     background-color: var(--vintage-orange);
-    color: var(--vintage-red);
+    color: #3a2000;
 }
- 
+
 .pay-now-button {
-    background-color: var(--vintage-green);
-    color: var(--vintage-yellow);
-    border: 0.06rem solid var(--vintage-yellow);
+    background-color: var(--bg-dark);
+    color: var(--text-on-dark);
+    border: 2px solid var(--border-accent);
 }
- 
+
 .cart-button:hover {
-    transform: translateY(-0.15rem);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.buy-more-button:hover { background-color: #d4851a; }
+.pay-now-button:hover  { background-color: #005a4a; }
+
+.section-divider {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-accent);
+    font-size: 1.1rem;
+    letter-spacing: 0.6rem;
+    opacity: 0.6;
 }

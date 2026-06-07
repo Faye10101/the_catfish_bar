@@ -1,94 +1,90 @@
-nav {
-    background-color: #f5a623;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    max-width: 1400px;
-    margin: auto;
-}
-
-nav a {
-    text-decoration: none;
-    color:#1a1a1a;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color:#fff;
-    transform: scale(1.05);
-}
-
-#menu-icon,
-.search-icon {
-    background: none;
-    border:none;
-    text-decoration: none;
-    font-size: 2rem;
-    color: #1a1a1a;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#menu-icon:hover,
-.search-icon:hover {
-    color: #fff;
-}
-
 .nav-bar {
     text-align: center;
-    margin: 2rem auto;
+    margin: 2.5rem auto;
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0 1rem;
 }
 
 .nav-bar .tag-button {
     background: transparent;
-    color: var(--vintage-yellow);
-    border: 2px solid var(--vintage-orange);
-    padding: 0.6rem 1.5rem;
-    letter-spacing: 1px;
-    font-size: 1rem;
+    color: var(--text-on-dark);
+    border: 2px solid var(--border-accent);
+    padding: 0.65rem 1.6rem;
+    letter-spacing: 0.06rem;
+    font-size: 0.95rem;
     font-weight: bold;
     cursor: pointer;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
+    font-family: 'Playfair Display SC', serif;
+    border-radius: 0.2rem;
 }
 
 .nav-bar .tag-button:hover,
 .nav-bar .tag-button.active {
-    background-color: #f5a623;
-    color: #8b0000;
+    background-color: var(--vintage-orange);
+    color: #3a2000;
+    border-color: var(--vintage-orange);
     transform: translateY(-2px);
-    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .nav-bar .tag-button::after {
     content: '✦';
     position: absolute;
     top: -12px;
-    right:-12px;
-    opacity:0;
-    transform:rotate(-20deg) scale(0.5);
-    transition:0.3s;
-    font-size:1.2rem;
-    color:#f5a623;
+    right: -12px;
+    opacity: 0;
+    transform: rotate(-20deg) scale(0.5);
+    transition: 0.3s;
+    font-size: 1.1rem;
+    color: var(--text-accent);
+    pointer-events: none;
 }
 
 .nav-bar .tag-button:hover::after,
 .nav-bar .tag-button.active::after {
     opacity: 1;
     transform: rotate(10deg) scale(1);
+}
+
+#filter-menu {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    padding: 0.5rem 1rem 1.5rem;
+}
+
+#filter-menu .tag-button {
+    background: rgba(253, 245, 230, 0.1);
+    color: var(--text-on-dark);
+    border: 1px solid var(--border-subtle);
+    padding: 0.4rem 1.1rem;
+    font-size: 0.85rem;
+    font-family: 'Playfair Display SC', serif;
+    cursor: pointer;
+    border-radius: 1rem;
+    transition: all 0.2s ease;
+}
+
+#filter-menu .tag-button:hover,
+#filter-menu .tag-button.active {
+    background-color: var(--vintage-orange);
+    color: #3a2000;
+    border-color: var(--vintage-orange);
+}
+
+#menu-icon,
+.search-icon {
+    background: none;
+    border: none;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: 0.3s;
 }
