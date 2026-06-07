@@ -1,42 +1,52 @@
-.nav-bar {
-    text-align: center;
-    margin: 2rem auto;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem; 
-}
-.nav-bar .tag-button {
-    background: transparent;
+.text a {
+    text-decoration: none;
     color: #fdf5e6;
     border: 2px solid #fdf5e6;
-    padding: 0.6rem 1.5rem;
+    padding: 0.9rem 2rem;
     letter-spacing: 1px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    position: relative; 
     transition: all 0.3s ease;
+    position: relative;
 }
-.nav-bar .tag-button:hover,
-.nav-bar .tag-button.active {
+
+.text a:hover {
     background-color: #fdf5e6;
-    color: #8b0000;              
-    transform: translateY(-2px);  
-    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+    color: #8b0000;
+    transform: translateY(-2px);
 }
-.nav-bar .tag-button::after {
+
+.text a::after {
     content: '✦';
     position: absolute;
     top: -12px;
-    right: -12px;
-    opacity: 0;
-    transform: rotate(-20deg) scale(0.5);
-    transition: 0.3s;
-    font-size: 1.2rem;
-    color: #f5a623;              
+    right:-12px;
+    opacity:0;
+    transform:rotate(-20deg) scale(0.5);
+    transition:0.3s;
+    font-size:1.2rem;
+    color:#f5a623;
 }
-.nav-bar .tag-button:hover::after,
-.nav-bar .tag-button.active::after {
-    opacity: 1;
-    transform: rotate(10deg) scale(1);
+
+.text a:hover::after {
+    opacity:1;
+    transform:rotate(10deg) scale(1);
 }
+
+.price-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.price-pill {
+    background-color: var(--vintage-yellow);
+    color: var(--vintage-red);
+    border-radius: 1rem;
+    padding: 0.35rem 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.03rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+

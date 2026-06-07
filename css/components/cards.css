@@ -25,59 +25,70 @@
     display: flex;
     overflow-x: auto;
     white-space: nowrap;
-    gap: 1.5rem;
+    gap: 1rem;
     padding: 1rem 1.25rem;
     scroll-behavior: smooth;
-    justify-content: center; 
+    justify-content: center;
 }
+
 .slide::-webkit-scrollbar {
     height: 0.3rem;
 }
+
 .slide::-webkit-scrollbar-thumb {
-    background: var(--vintage-yellow, #e6cb94);
+    background: var(--vintage-yellow);
     border-radius: 0.6rem;
 }
+
 .item-card {
-    background: var(--vintage-red, #8b0000); 
-    border: 1px solid var(--vintage-orange, #f5a623);
+    background: var(--vintage-red);
+    border: 1px solid var(--vintage-orange);
     padding: 0.75rem;
-    width: 11rem; 
+    width: 10rem;
     flex-shrink: 0;
     text-align: center;
-    border-radius: 0.4rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.3rem;
     animation: fadeIn 0.4s ease-in-out;
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .item-card:hover {
-    transform: translateY(-5px) scale(1.04);
-    background: var(--vintage-orange, #f5a623);
-    box-shadow: 0 12px 20px rgba(245, 166, 35, 0.35); 
+    transform: scale(1.05);
+    background: var(--vintage-orange);
+}
+
+.item-card p {
+    margin-top: 0.5rem;
+    color: var(--vintage-yellow);
+    font-size: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .item-card img {
     width: 100%;
-    height: 9.5rem;       
-    object-fit: contain;  
-    background: #ffffff;  
-    border-radius: 0.25rem;
+    height: 9.5rem;
+    object-fit: contain;
+    background: var(--vintage-white);
+    border-radius: 0.2rem;
     transition: transform 0.3s ease;
 }
+
 .item-card:hover img {
-    transform: scale(1.03); 
+    transform: scale(1.05);
 }
-.item-card p {
-    margin-top: 0.6rem;
-    color: var(--vintage-yellow, #fdf5e6);
-    font-size: 0.95rem;
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; 
-}
+
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(0.6rem); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(0.6rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .product-result-card {
